@@ -22,7 +22,7 @@ const UserProfile = () => {
 
     const getUser = async () => {
         setError('');
-        const response = await fetch(`/api/users/user/${userName}`, {
+        const response = await fetch(`https://feeelapp.herokuapp.com/api/users/user/${userName}`, {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
@@ -35,7 +35,7 @@ const UserProfile = () => {
     }
 
     const fetchTweets = async () => {
-        const response = await fetch(`/api/tweets/user/${userName}`, {
+        const response = await fetch(`https://feeelapp.herokuapp.com/api/tweets/user/${userName}`, {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`

@@ -14,7 +14,7 @@ const Search = () => {
     const [tempUser, setTempUser] = useState('');
 
     const getUsers = async () => {
-        const response = await fetch('/api/users', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users', {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
@@ -26,7 +26,7 @@ const Search = () => {
     }
 
     const getCurrentUser = async () => {
-        const response = await fetch('/api/users/me', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users/me', {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
@@ -39,7 +39,7 @@ const Search = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
         const userName = e.target.people.value;
-        const response = await fetch(`/api/users/user/${userName}`, {
+        const response = await fetch(`https://feeelapp.herokuapp.com/api/users/user/${userName}`, {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
@@ -73,7 +73,7 @@ const Search = () => {
         console.log(user);
 
         // Update the current user with the new follower
-        const response = await fetch(`/api/users/me/following`, {
+        const response = await fetch(`https://feeelapp.herokuapp.com/api/users/me/following`, {
             method: 'PATCH',
             body: JSON.stringify({userId: user._id}),
             headers: {

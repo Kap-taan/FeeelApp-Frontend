@@ -18,7 +18,7 @@ const Notification = ({setIsChanged}) => {
     }
 
     const getNotifications = async () => {
-        const response = await fetch('/api/users/me', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users/me', {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`

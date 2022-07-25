@@ -10,7 +10,7 @@ const Explore = () => {
     const [loading, setLoading] = useState(true);
 
     const fetchTweets = async () => {
-        const response = await fetch('/api/tweets', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/tweets', {
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
             }

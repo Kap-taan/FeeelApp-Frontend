@@ -14,7 +14,7 @@ const CreateTweetShort = ({fetchTweets}) => {
             hashtags: []
 
         };
-        const response = await fetch('/api/tweets', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/tweets', {
             method: 'POST',
             body: JSON.stringify(tweet),
             headers: {

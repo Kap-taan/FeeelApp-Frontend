@@ -10,7 +10,7 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     const fetchTweets = async () => {
-        const response = await fetch('/api/tweets/following', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/tweets/following', {
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
             }

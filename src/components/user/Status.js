@@ -7,7 +7,7 @@ const Status = () => {
     const [following, setFollowing] = useState([]);
 
     const getInfo = async () => {
-        const response = await fetch('/api/users/me/followers', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users/me/followers', {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
@@ -16,7 +16,7 @@ const Status = () => {
         const json = await response.json();
         setFollowers(json);
         
-        const response1 = await fetch('/api/users/me/following', {
+        const response1 = await fetch('https://feeelapp.herokuapp.com/api/users/me/following', {
             method: 'GET',
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem('Token')}`
@@ -30,7 +30,7 @@ const Status = () => {
 
     const unfollowHandler = async (following) => {
         const followingId = following._id;
-        const response = await fetch('/api/users/me/unfollow', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users/me/unfollow', {
             method: 'PATCH',
             body: JSON.stringify({
                 followingId: followingId

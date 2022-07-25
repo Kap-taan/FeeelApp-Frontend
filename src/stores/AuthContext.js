@@ -5,7 +5,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
 
     const loginFunction = async (user) => {
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users/login', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     const signupFunction = async (user) => {
-        const response = await fetch('/api/users', {
+        const response = await fetch('https://feeelapp.herokuapp.com/api/users', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
